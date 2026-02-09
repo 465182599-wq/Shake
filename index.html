@@ -2,12 +2,34 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>词语消失游戏</title>
-<link rel="icon" href="data:,"> 
+  <link rel="icon" href="data:,"> 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <style>
+    /* 新增样式：适配手机+添加开始提示 */
+    body { margin: 0; padding: 0; overflow: hidden; }
+    canvas { display: block; }
+    #tip {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 18px;
+      color: #333;
+      text-align: center;
+      padding: 20px;
+      background: rgba(255,255,255,0.9);
+      border-radius: 10px;
+      z-index: 100;
+    }
+  </style>
 </head>
 <body>
+  <!-- 新增开始提示框 -->
+  <div id="tip">点击屏幕开始游戏<br/>摇晃手机让词语消失</div>
+  
+  <!-- 依然引入 sketch.js -->
   <script src="sketch.js"></script>
 </body>
 </html>
