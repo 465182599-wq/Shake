@@ -1,3 +1,50 @@
+import CoreMotion
+
+class ShakeViewController: UIViewController {
+    
+    let motionManager = CMMotionManager() // 用于管理传感器
+    var lastAcceleration: CMAcceleration? = nil
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // 启动加速度计监控
+        startAccelerometerUpdates()
+    }
+    
+    func startAccelerometerUpdates() {
+        if motionManager.isAccelerometerAvailable {
+            motionManager.accelerometerUpdateInterval = 0.1 // 每0.1秒更新一次
+            motionManager.startAccelerometerUpdates(to: .main) { (data, error) in
+                if let accelerometerData = data {
+                    // 每次更新时检查加速度变化
+                    self.handleAccelerationChange(accelerometerData.acceleration)
+                }
+            }
+        }
+    }
+    
+    func handleAccelerationChange(_ acceleration: CMAcceleration) {
+        // 获取当前加速度与上一次加速度的差值
+        if let last = lastAcceleration {
+            let deltaX = abs(acceleration.x - last.x)
+            let deltaY = abs(acceleration.y - last.y)
+            let deltaZ = abs(acceleration.z - last.z)
+            
+            // 设置一个阈值判断是否为摇晃动作（可以根据需要调整阈值）
+            if deltaX > 2.0 || deltaY > 2.0 || deltaZ > 2.0 {
+                // 检测到摇晃，执行相应的动作
+                print("Shake detected!")
+                // 在这里你可以触发你的摇晃事件
+                // 比如触发一个界面更新、播放声音等
+            }
+        }
+        
+        // 更新上一次的加速度值
+        lastAcceleration = acceleration
+    }
+}
+
 let words = [
   "life", "job", "career", "family", "future", "big television", 
   "washing machine", "car", "CD player", "tin opener", "health", 
