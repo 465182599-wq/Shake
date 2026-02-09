@@ -41,6 +41,17 @@ function draw() {
     text(word.text, word.x, word.y);
   }
 }
+if (window.DeviceMotionEvent) {
+  // 显式请求传感器访问
+  window.addEventListener('devicemotion', function(event) {
+    let x = event.acceleration.x;
+    let y = event.acceleration.y;
+    let z = event.acceleration.z;
+    console.log(`Acceleration X: ${x}, Y: ${y}, Z: ${z}`);
+  }, false);
+} else {
+  console.log("DeviceMotionEvent is not supported on this device.");
+}
 
 // 处理手机的运动数据
 function handleMotion(event) {
