@@ -1,15 +1,8 @@
-# ZEN
-Zen is an interactive visual system based on the action of cutting words. It can also be seen as a small game that symbolizes meditation.
+# bullett1me
+This is a  "bullet comment" interaction that uses collision effects to simulate how collective social media opinion can "deify" and then "destroy" a personal ID.
 ## Description
-During the interaction, the user (or player) will notice that cutting the randomly appearing word “mind” reduces the total number of words on the screen, while cutting the word “zen” increases the number of words instead. Because of this, the user naturally begins to treat “mind” as the main target of interaction.
-
-However, after some time, the user will realize that even when no other words appear, the word “mind” continues to return again and again. In reality, the words on the screen come from a word library. Cutting the word “zen” will permanently remove one word from this library. Only when all the words in the library have been removed will no new words appear on the screen. This moment represents meditation reaching a complete and perfect state.
-
-Through this system, the work suggests that meditation is not about suppressing thoughts, but about searching for Zen itself.
+I simulated a "bullet comment" (danmu) effect: users click to send comments that hit my personal social and gaming IDs. These IDs "swell" upon impact and eventually dissipate after repeated hits. This serves as a metaphor for how social media discourse can "create" or "destroy" a public figure. I chose my own IDs to remain neutral and avoid pointing to specific events or people, simply inviting reflection on the process itself—as I, the author, have never caused a stir on the internet.
 ## Controls
-Mouse click: main interaction
-press R to restart
+Mouse click: add bullet
 ## References 
-Trainspotting. (1996) Directed by Danny Boyle. UK: Channel Four Films.
-The Miracle of Mindfulness. (1999) The Miracle of Mindfulness. Boston: Beacon Press.
-Zen Mind, Beginner’s Mind. (1970) Zen Mind, Beginner’s Mind. New York: Weatherhill.
+
